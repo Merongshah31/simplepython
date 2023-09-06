@@ -12,7 +12,7 @@ def getdata(url):
     r = request3.get(url)
     return r.text
 #scraping website
-htmldata = getdata("https://weather.com/weather/today/l/8608d9458c3c5a2be69f0fa015ec036b93432cfed3dc4a2cc44e239e3cda011f")        
+htmldata = getdata(" ")        
 
 soup = BeautifulSoup(htmldata, 'lxml')                                                   #change html parser to lxml
 
@@ -26,7 +26,7 @@ chances_rain = soup.find_all("div",
 temp = (str(current_temp))
 temp_rain = str(chances_rain)
 
-result = "current_temp " + temp[128:-9] + " in Lenggong, Perak" + "\n" +temp_rain[131:-14]
+result = "current_temp " + temp[128:-9] + " in -" + "\n" +temp_rain[131:-14]
 
 
 #print out notification window
